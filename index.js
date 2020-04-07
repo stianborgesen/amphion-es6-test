@@ -16,8 +16,8 @@ function loadRobot(viewer){
   viewer.addVisualization(robotModel)
 }
 
-function loadTf(viewer){
-  const path = new Amphion.Path(ros, '/panda_tf');
+function loadTf(ros, viewer){
+  const path = new Amphion.Path(ros, '/tf');
   path.subscribe();
   path.updateOptions({
     color: 0xff0000,
@@ -36,5 +36,5 @@ const viewer = new Amphion.TfViewer(ros);
 //const viewer = new Amphion.TfViewer(ros);
 viewer.setContainer(document.getElementById('scene3d'));
 ros.connect(url)
-loadTf(viewer)
+loadTf(ros, viewer)
 //loadRobot(viewer)
