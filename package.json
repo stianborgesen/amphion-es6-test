@@ -7,7 +7,6 @@
     "amphion": "0.1.14",
     "roslib": "1.1.0",
     "three": "0.109.0",
-    "three-mesh-bvh": "0.2.0",
-    "urdf-loader": "^0.7.1"
+    "three-mesh-bvh": "0.2.0"
   }
 }
