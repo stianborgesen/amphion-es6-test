@@ -11,13 +11,13 @@ const ur_packages = {robot_description: ur_description}
 const franka_packages = {franka_description: franka_description}
 
 function loadRobot(viewer){
-  const robotModel = new Amphion.RobotModel(ros, 'robot_description',{packages:franka_packages})
+  const robotModel = new Amphion.RobotModel(ros, 'franka_description',{packages:franka_packages})
   robotModel.load()
   viewer.addVisualization(robotModel)
 }
 
 function loadTf(ros, viewer){
-  const path = new Amphion.Path(ros, '/tf');
+  const path = new Amphion.Path(ros, '/pose_array_rosbag');
   path.subscribe();
   path.updateOptions({
     color: 0xff0000,
@@ -37,4 +37,4 @@ const viewer = new Amphion.TfViewer(ros);
 viewer.setContainer(document.getElementById('scene3d'));
 ros.connect(url)
 loadTf(ros, viewer)
-//loadRobot(viewer)
+loadRobot(viewer)
