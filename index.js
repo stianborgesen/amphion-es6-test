@@ -1,4 +1,5 @@
-// Import stylesheets
+// Using Amphion v.0.1.14
+// We also tried newer version of Amphion, supporting Typescript and more, but encountered other issues
 import './style.css';
 import { Ros } from 'roslib'
 import Amphion from 'amphion'
@@ -35,14 +36,5 @@ class Loader{
 }
 const url = 'ws://localhost:9090'
 const loader = new Loader(url)
-loader.loadTf("/path_rosbag")
+//loader.loadTf("/path_rosbag")
 loader.loadRobot(franka_packages)
-//const ros = new Ros();
-
-//const scene = new Amphion.Scene();
-//const viewer = new Amphion.Viewer3d();
-//const viewer = new Amphion.TfViewer(ros);
-//viewer.setContainer(document.getElementById('scene3d'));
-//ros.connect(url)
-//loadTf(ros, viewer, '/path_rosbag')
-//loadRobot(viewer, franka_packages)
